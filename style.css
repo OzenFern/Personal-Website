@@ -22,7 +22,6 @@ body {
 
 .nav-container {
   display: flex;
-  gap: 10px;
   justify-content: center;
   align-items: center;
   background-color: var(--crust);
@@ -30,18 +29,61 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
   font-size: 1rem;
   padding: 1rem;
+  width: 100dvw;
+  text-align: center;
 }
 
 .nav-links li {
   list-style: none;
-  display: inline-block;
-  width: 10vw;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text);
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  display: block;
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 5rem 0;
+  padding: 5rem;
+  height: 50dvh;
+  text-align: center;
+}
+
+.ozen {
+  font-family: var(--heading);
+  color: var(--sub-text);
+  font-weight: 900;
+}
+
+h1,
+.ozen {
+  font-size: 5rem;
+}
+
+.home-container h2 {
+  font-family: var(--sub-heading);
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
