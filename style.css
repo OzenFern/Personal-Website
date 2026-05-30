@@ -121,7 +121,7 @@ footer hr {
 
 .footer-content {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   align-content: space-around;
@@ -132,8 +132,12 @@ footer hr {
   font-size: 0.9rem;
   color: var(--sub-text);
 }
-
-@media (max-width: 480px) {
+@media (max-with: 768px) {
+  .footer-content {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 576px) {
   .nav-links {
     flex-direction: column;
     gap: 2rem;
