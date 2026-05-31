@@ -84,7 +84,7 @@ h1,
   font-size: 2rem;
 }
 
-.hero-buttons {
+.hero-btn {
   display: flex;
   justify-content: space-evenly;
   gap: 10px;
@@ -92,7 +92,7 @@ h1,
   margin: 2rem;
 }
 
-.hero-buttons > a {
+.hero-btn > a {
   background-color: var(--button-bg);
   text-decoration: none;
   color: var(--text);
@@ -103,7 +103,7 @@ h1,
   transition: background-color 0.3s ease;
 }
 
-.hero-buttons > a:hover {
+.hero-btn > a:hover {
   background-color: color-mix(in srgb, var(--button-bg), var(--crust) 20%);
 }
 
@@ -143,7 +143,7 @@ footer hr {
     gap: 2rem;
   }
 
-  .hero-buttons {
+  .hero-btn {
     flex-direction: column;
   }
 
