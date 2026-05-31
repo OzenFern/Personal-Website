@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/OZ-monogram.ico"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +24,7 @@
         <ul class="nav-links">
           <li><a href="#Home">Home</a></li>
           <li><a href="#About">About</a></li>
+          <li><a href="#Skills">Skills</a></li>
           <li><a href="#Projects">Projects</a></li>
           <li><a href="#Contact">Contact</a></li>
         </ul>
@@ -45,10 +51,10 @@
         </div>
       </section>
       <section id="About">
-        <div class="about-container">
+        <div class="about-container" data-aos="fade-up">
           <h2>About Me</h2>
           <div class="col-2-layout">
-            <div class="center-content">
+            <div class="center-content" data-aos="flip-right">
               <img
                 src="./assets/programming.svg"
                 alt="programming"
@@ -56,12 +62,12 @@
               />
             </div>
 
-            <p>
+            <p data-aos="fade-right">
               I'm a Computer Science & Engineering student who enjoys building
               software, exploring new technologies, and continuously improving
               my technical skills.
             </p>
-            <div class="center-content">
+            <div class="center-content" data-aos="flip-down">
               <img
                 src="./assets/ai-agent.svg"
                 alt="ai-agent"
@@ -69,12 +75,13 @@
               />
             </div>
 
-            <p>
+            <p data-aos="fade-up">
               My current interests include Artificial Intelligence, Machine
               Learning, Data Science, Linux, and Web Development. I enjoy
               creating practical projects that help me learn by doing.
             </p>
-            <div class="center-content">
+
+            <div class="center-content" data-aos="flip-left">
               <img
                 src="./assets/growth-chart.svg"
                 alt="growth-chart"
@@ -82,11 +89,47 @@
               />
             </div>
 
-            <p>
+            <p data-aos="fade-left">
               I'm currently focused on strengthening my programming fundamentals
               while gradually moving toward AI/ML and Data Science.
             </p>
           </div>
+        </div>
+      </section>
+      <section id="Skills">
+        <div class="skills-container" data-aos="fade-up">
+          <h2>Skills</h2>
+
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>C</li>
+            <li>C++</li>
+          </ul>
+          <h3>Web Development</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap (Learning / Using)</li>
+          </ul>
+
+          <h3>Tools & Technologies</h3>
+          <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Linux</li>
+            <li>LaTeX</li>
+            <li>VS Code</li>
+            <li>Notion</li>
+            <li>Obsidian</li>
+          </ul>
+
+          <h3>Currently Learning</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>Tailwind CSS</li>
+            <li>AI/ML Fundamentals</li>
+          </ul>
         </div>
       </section>
       <section id="Projects"></section>

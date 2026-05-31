@@ -16,7 +16,7 @@
   font-family: var(--paragraph);
   font-size: 1rem;
 }
-html body {
+body {
   background-color: var(--base);
   color: var(--text);
 }
@@ -29,6 +29,7 @@ html body {
 
 .nav-container {
   background-color: var(--crust);
+  height: 10dvh;
 }
 
 .nav-links {
@@ -42,9 +43,8 @@ html body {
   text-align: center;
 }
 
-.nav-links li {
+li {
   list-style: none;
-  color: var(--sub-text);
 }
 
 .nav-links a {
@@ -64,9 +64,9 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  margin: 5rem 0;
-  padding: 0 5rem;
-  height: 50dvh;
+  /* margin: 5rem 0; */
+  /* padding: 0 5rem; */
+  height: 90dvh;
   text-align: center;
 }
 
@@ -136,6 +136,10 @@ h2 {
   width: 90dvw;
 }
 
+.col-2-layout p {
+  font-size: 1.2rem;
+}
+
 .about-img {
   height: 8rem;
 }
@@ -164,6 +168,13 @@ footer hr {
 .footer-content p {
   font-size: 0.9rem;
   color: var(--sub-text);
+}
+
+/* For sizes tablet and above */
+@media (min-width: 769px) {
+  .about-container .center-content {
+    order: -1;
+  }
 }
 
 /* Tablet Size and Below */
