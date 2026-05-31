@@ -8,6 +8,7 @@
   --heading: "Inria Serif", serif;
   --sub-heading: "Inter", sans-serif;
   --paragraph: "Bricolage Grotesque", sans-serif;
+  --navbar-height: 3rem;
 }
 
 * {
@@ -16,6 +17,12 @@
   font-family: var(--paragraph);
   font-size: 1rem;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--navbar-height) + 1rem);
+}
+
 body {
   background-color: var(--base);
   color: var(--text);
