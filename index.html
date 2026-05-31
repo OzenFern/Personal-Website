@@ -20,7 +20,12 @@
   </head>
   <body>
     <header>
-      <nav class="nav-container center-content">
+      <!-- Add theses to nav and make nav links collapsible -->
+      <input type="checkbox" id="toggle-menu" />
+      <label for="toggle-menu" class="hamburger">&#9776;</label>
+      <label for="toggle-menu" class="backdrop"></label>
+      <img src="./assets/OZ-monogram.ico" alt="OZ-monogram" class="logo" />
+      <nav class="nav-container">
         <ul class="nav-links">
           <li><a href="#Home">Home</a></li>
           <li><a href="#About">About</a></li>
@@ -32,7 +37,7 @@
     </header>
     <main>
       <section id="Home">
-        <div class="home-container">
+        <div class="home-container" data-aos="fade-in">
           <h1>Hi, I'm <span class="ozen">Ozen</span></h1>
           <h2>Computer Science & Engineering Student</h2>
           <div class="hero-btn">

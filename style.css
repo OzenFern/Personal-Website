@@ -4,10 +4,10 @@
   --crust: #393e46;
   --text: #eeeeee;
   --sub-text: #00adb5;
+  --button-bg: #2f7f85;
   --heading: "Inria Serif", serif;
   --sub-heading: "Inter", sans-serif;
   --paragraph: "Bricolage Grotesque", sans-serif;
-  --button-bg: #2f7f85;
 }
 
 * {
@@ -21,6 +21,44 @@ body {
   color: var(--text);
 }
 
+#toggle-menu {
+  display: none;
+}
+
+.logo {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  z-index: 10;
+  padding: 1rem;
+  height: 3rem;
+}
+
+.hamburger {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  z-index: 10;
+  padding: 1rem;
+  user-select: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--sub-text);
+  /* background-color: var(--base); */
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: none;
+  cursor: default;
+}
+
 .center-content {
   display: flex;
   justify-content: center;
@@ -28,19 +66,28 @@ body {
 }
 
 .nav-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
   background-color: var(--crust);
-  height: 10dvh;
+  height: 100dvh;
+  width: 50%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav-links {
+  margin-top: 5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  font-size: 1rem;
-  padding: 1rem;
-  width: 100dvw;
-  text-align: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2rem;
+  /* font-size: 1.5rem; */
+  padding: 2rem;
+  width: 100%;
+  /* text-align: center; */
 }
 
 li {
@@ -52,11 +99,20 @@ li {
   color: var(--sub-text);
 }
 
+#toggle-menu:checked ~ .nav-container {
+  transform: translateX(0);
+}
+
+#toggle-menu:checked ~ .backdrop {
+  display: block;
+}
+
 h1,
 h2,
 h3 {
   font-family: var(--heading);
   display: block;
+  margin: 2rem 0;
 }
 .home-container {
   display: flex;
@@ -65,8 +121,8 @@ h3 {
   align-items: center;
   gap: 0.25rem;
   /* margin: 5rem 0; */
-  /* padding: 0 5rem; */
-  height: 90dvh;
+  padding: 0 2rem;
+  height: 100dvh;
   text-align: center;
 }
 
@@ -83,8 +139,8 @@ h1,
 
 .home-container h2 {
   font-family: var(--sub-heading);
-  font-weight: 500;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 .hero-btn {
@@ -100,6 +156,8 @@ h1,
   max-width: 250px;
   background-color: var(--button-bg);
   text-decoration: none;
+  font-style: var(--sub-heading);
+  font-size: 1.35rem;
   color: var(--text);
   padding: 1rem 3rem;
   border: none;
@@ -119,13 +177,20 @@ h1,
   align-items: center;
   flex-wrap: wrap;
   width: 100dvw;
+  height: 100dhv;
   text-align: justify;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 3.5rem;
+  font-weight: 800;
   color: var(--sub-text);
-  margin: 2rem 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sub-text);
 }
 
 .col-2-layout {
@@ -196,11 +261,6 @@ footer hr {
 @media (max-width: 576px) {
   html {
     font-size: 85%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 2rem;
   }
 
   .hero-btn {
