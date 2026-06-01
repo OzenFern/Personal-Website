@@ -10,24 +10,26 @@
   --paragraph: "Bricolage Grotesque", sans-serif;
   --navbar-height: 5rem;
   --scroll-pt: calc(var(--navbar-height) + 0.5rem);
+  --hover-bg-color: color-mix(in srgb, var(--button-bg), var(--crust) 20%);
+  --hover-color: color-mix(in srgb, var(--text), var(--crust) 20%);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--paragraph);
-  font-size: 1rem;
 }
 
 html {
   scroll-behavior: smooth;
-  /* scroll-padding-top: var(--scroll-pt); */
+  scroll-padding-top: var(--scroll-pt);
 }
 
 body {
   background-color: var(--base);
   color: var(--text);
+  font-family: var(--paragraph);
+  font-size: 1rem;
 }
 
 #toggle-menu {
@@ -70,14 +72,15 @@ body {
   top: 0;
   left: 0;
   z-index: 80;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
   background-color: transparent;
   cursor: default;
 }
 
 .center-content {
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }
@@ -87,7 +90,7 @@ body {
   top: 0;
   left: 0;
   z-index: 90;
-  width: 100dvw;
+  width: 100%;
   padding: 0 2rem;
   height: var(--navbar-height);
   background-color: var(--crust);
@@ -112,7 +115,7 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 2rem 3rem;
-  width: 100dvw;
+  width: 100%;
 }
 
 li {
@@ -138,8 +141,9 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  /* margin: 5rem 0; */
+  margin: var(--navbar-height) 0;
   padding: 0 2rem;
+  width: 100%;
   height: calc(100dvh - var(--navbar-height));
   text-align: center;
 }
@@ -190,22 +194,21 @@ h3 {
   max-width: 250px;
   background-color: var(--button-bg);
   text-decoration: none;
-  font-style: var(--sub-heading);
+  font-family: var(--sub-heading);
   font-size: 1.35rem;
   color: var(--text);
   padding: 1rem 3rem;
   border: none;
   border-radius: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  /* transform 0.3s ease; */
-  /* color 0.3s ease, */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .hero-btn > a:hover {
-  background-color: color-mix(in srgb, var(--button-bg), var(--crust) 20%);
-  /* color: color-mix(in srgb, var(--text), var(--crust) 20%);
-  transform: translateY(-8px); */
+  background-color: var(--hover-bg-color);
+  color: var(--hover-color);
 }
 
 .container {
@@ -213,9 +216,9 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  width: 100dvw;
-  height: 100dvh;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  height: 100%;
   text-align: justify;
   padding: 0 3rem;
 }
@@ -224,7 +227,7 @@ h3 {
   display: grid;
   grid-template: repeat(1, 1fr) / repeat(3, 1fr);
   gap: 2rem;
-  width: 90dvw;
+  width: 90%;
 }
 
 .about-layout p {
@@ -237,7 +240,7 @@ h3 {
 
 .skills-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 1rem 0;
 }
@@ -247,11 +250,11 @@ h3 {
   padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid var(--sub-text);
-  transition: transfrom 0.6s ease;
+  transition: transform 0.6s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-0.8rem);
 }
 
 .skills {
@@ -260,6 +263,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  /* align-content: center; */
   gap: 0.75rem;
 }
 
@@ -268,6 +272,7 @@ h3 {
   /* font-family: var(--sub-heading); */
   padding: 0.4rem 0.8rem;
   border-radius: 1.5rem;
+  /* text-align: center; */
   border: 1px solid var(--button-bg);
   transition:
     background-color 0.2s ease,
@@ -275,8 +280,8 @@ h3 {
 }
 
 .skills li:hover {
-  background-color: color-mix(in srgb, var(--button-bg), var(--crust) 20%);
-  color: color-mix(in srgb, var(--text), var(--crust) 20%);
+  background-color: var(--hover-bg-color);
+  color: var(--hover-color);
   cursor: default;
 }
 
@@ -300,7 +305,7 @@ footer hr {
   flex-wrap: wrap;
   align-content: space-around;
   gap: 1rem;
-  width: 100dvw;
+  width: 100%;
 }
 
 .footer-content p {
@@ -358,8 +363,8 @@ footer hr {
     justify-content: flex-start;
     align-items: flex-start;
     background-color: var(--crust);
-    height: 100dvh;
-    width: 50dvw;
+    height: 100%;
+    width: 50%;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
@@ -382,7 +387,7 @@ footer hr {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 80dvw;
+    width: 80%;
   }
 
   .skills-layout {
