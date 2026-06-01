@@ -8,19 +8,21 @@
   --heading: "Inria Serif", serif;
   --sub-heading: "Inter", sans-serif;
   --paragraph: "Bricolage Grotesque", sans-serif;
-  --navbar-height: 5rem;
+  --nav-container-height: 5rem;
+  --scroll-pt: calc(var(--nav-container-height) + 0.5rem);
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: var(--paragraph);
   font-size: 1rem;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--navbar-height) + 1rem);
+  scroll-padding-top: var(--scroll-pt);
 }
 
 body {
@@ -32,22 +34,29 @@ body {
   display: none;
 }
 
+/* Use Flexbox to align the icon and hamburger to aling to the opposite ends of the webpage */
+
 .logo {
-  position: fixed;
+  /* position: fixed;
   top: 1%;
   left: 1%;
-  z-index: 100;
-  padding: 1rem;
-  height: 3rem;
+  z-index: 100; */
+  /* padding: 1rem; */
+  order: -1;
+}
+
+.logo > img {
+  height: var(--nav-container-height);
 }
 
 .hamburger {
   display: none;
-  position: fixed;
+  /* position: fixed;
   top: 1%;
-  right: 1%;
+  right: 1%; */
   z-index: 100;
-  padding: 1rem;
+  /* margin: 2rem 0; */
+  /* height: 100%; */
   user-select: none;
   cursor: pointer;
   font-size: 1.5rem;
@@ -73,23 +82,33 @@ body {
   align-items: center;
 }
 
-.nav-container {
-  /* position: fixed;
+.navbar {
+  position: fixed;
   top: 0;
-  left: 0; */
+  left: 0;
   z-index: 90;
   width: 100dvw;
-  height: var(--navbar-height);
-  background-color: var(--base);
+  padding: 0 5rem;
+  height: var(--nav-container-height);
+  background-color: var(--crust);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  /* max-width: 1100px; */
 }
 
 .nav-links {
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  right: 0;
+  right: 0; */
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   padding: 2rem 3rem;
   width: 100dvw;
@@ -111,6 +130,7 @@ h3 {
   display: block;
   margin: 2rem 0;
 }
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -119,19 +139,31 @@ h3 {
   gap: 0.25rem;
   /* margin: 5rem 0; */
   padding: 0 2rem;
-  height: calc(100dvh - var(--navbar-height));
+  height: calc(100dvh - var(--nav-container-height));
   text-align: center;
 }
 
 .ozen {
   font-family: var(--heading);
   color: var(--sub-text);
-  font-weight: 900;
+  /* font-weight: 900; */
 }
 
 h1,
 .ozen {
   font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  /* font-weight: 800; */
+  color: var(--sub-text);
+}
+
+h3 {
+  font-size: 1.5rem;
+  /* font-weight: 900; */
+  color: var(--sub-text);
 }
 
 .home-container h2 {
@@ -181,18 +213,6 @@ h1,
   text-align: justify;
 }
 
-h2 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--sub-text);
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--sub-text);
-}
-
 .col-2-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -219,6 +239,7 @@ footer hr {
   border: none;
   border-top: 1px solid var(--sub-text);
   margin-bottom: 1rem;
+  /* width: 100dvw; */
 }
 
 .footer-content {
@@ -228,6 +249,7 @@ footer hr {
   flex-wrap: wrap;
   align-content: space-around;
   gap: 1rem;
+  width: 100dvw;
 }
 
 .footer-content p {
@@ -264,7 +286,7 @@ footer hr {
   }
 
   .hamburger {
-    display: block;
+    display: inline;
   }
 
   .nav-links {
@@ -272,7 +294,7 @@ footer hr {
     top: 0;
     right: 0;
     z-index: 95;
-    padding-top: 5rem;
+    padding-top: var(--scroll-pt);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
