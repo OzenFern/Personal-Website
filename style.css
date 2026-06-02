@@ -141,6 +141,10 @@ li {
   list-style: none;
 }
 
+b {
+  color: var(--sub-text);
+}
+
 .nav-links a {
   text-decoration: none;
   color: var(--sub-text);
@@ -217,6 +221,9 @@ h4 {
 .glowing-btn {
   background-color: var(--button-bg);
   box-shadow: 1px 2px 15px var(--hover-bg-color);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
 }
 
 .hero-btns > a {
@@ -246,7 +253,8 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* flex-wrap: wrap; */
+  /* flex-wrap: wrap;
+  align-content: center; */
   width: 100%;
   height: 100%;
   text-align: justify;
@@ -260,10 +268,6 @@ h4 {
   gap: 2rem;
   width: 90%;
 }
-
-/*.about-layout p {
-  font-size: 1.2rem;
-} */
 
 .about-img {
   height: 8rem;
@@ -399,6 +403,50 @@ h4 {
 .project-links > a:hover {
   background-color: var(--hover-bg-color);
   color: var(--hover-color);
+}
+
+#Contact h2 {
+  text-align: center;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template: repeat(2, 1fr) / minmax(auto, 600px);
+  gap: 3rem;
+}
+
+.connect-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 5rem;
+}
+
+.icon-links {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--sub-text);
+  border: 1px solid var(--hover-bg-color);
+  border-radius: 50%;
+  padding: 1rem;
+  height: 4.5rem;
+  width: max-content;
+  box-shadow: 0 1px 10px var(--hover-bg-color);
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.4s ease;
+}
+
+.connect-links svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-links:hover {
+  transform: scale(1.2);
+  box-shadow: 1px 3px 15px var(--hover-bg-color);
 }
 
 footer {
