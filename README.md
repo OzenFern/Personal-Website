@@ -50,7 +50,7 @@ Since this project is built with static files, no build steps or package manager
 
 3. Open `index.html` in your preferred web browser. (Alternatively, use an extension like VS Code Live Server for hot-reloading).
 
-## 👨‍💻 Author
+## Author
 
 **Ozen Fernandes**
 
