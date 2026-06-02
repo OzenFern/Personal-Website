@@ -22,7 +22,7 @@ The site features a custom design system, glassmorphism elements, and smooth scr
 - **Structure:** Semantic HTML5
 - **Styling:** CSS3 (Custom Variables, CSS Grid, Flexbox, Pseudo-elements, Media Queries)
 - **Interactivity:** CSS Checkbox Hack (for mobile menu)
-- **Animation Library:** [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
+- **Animation Library:** [_AOS (Animate On Scroll)_](https://michalsnik.github.io/aos/)
 
 ## Sections
 
