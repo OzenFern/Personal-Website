@@ -12,6 +12,7 @@
   --scroll-pt: calc(var(--navbar-height) + 0.5rem);
   --hover-bg-color: color-mix(in srgb, var(--button-bg), var(--crust) 20%);
   --hover-color: color-mix(in srgb, var(--text), var(--crust) 20%);
+  --section-height: calc(100dvh - var(--navbar-height));
 }
 
 * {
@@ -29,7 +30,7 @@ body {
   background-color: var(--base);
   color: var(--text);
   font-family: var(--paragraph);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 #toggle-menu {
@@ -129,7 +130,8 @@ li {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--heading);
   display: block;
   margin: 2rem 0;
@@ -144,7 +146,7 @@ h3 {
   margin: var(--navbar-height) 0;
   padding: 0 2rem;
   width: 100%;
-  height: calc(100dvh - var(--navbar-height));
+  height: var(--section-height);
   text-align: center;
 }
 
@@ -161,16 +163,23 @@ h1,
 
 h2 {
   font-size: 3.5rem;
-  /* font-weight: 800; */
+  /* font-weight: 900; */
   color: var(--sub-text);
 }
 
 h3 {
-  font-size: 1.5rem;
-  /* font-weight: 900; */
+  font-size: 1.6rem;
+  /* font-weight: 800; */
   color: var(--sub-text);
   margin: 0;
   margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  /* font-weight: 700; */
+  color: var(--sub-text);
+  margin: 1rem 0;
 }
 
 .home-container h2 {
@@ -221,6 +230,7 @@ h3 {
   height: 100%;
   text-align: justify;
   padding: 0 3rem;
+  margin: 5rem 0;
 }
 
 .about-layout {
@@ -230,9 +240,9 @@ h3 {
   width: 90%;
 }
 
-.about-layout p {
+/*.about-layout p {
   font-size: 1.2rem;
-}
+} */
 
 .about-img {
   height: 8rem;
@@ -241,6 +251,7 @@ h3 {
 .skills-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   gap: 2rem;
   padding: 1rem 0;
 }
@@ -285,6 +296,88 @@ h3 {
   cursor: default;
 }
 
+.project-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  background-color: var(--crust);
+  padding: 1.5rem;
+  /* padding-bottom: 0; */
+  border-radius: 1rem;
+  border: 1px solid var(--sub-text);
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-0.8rem);
+}
+/* 
+.project-layout .skills li {
+  background-color: var(--button-bg);
+} */
+
+.features {
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.features li {
+  list-style-type: circle;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: color-mix(in srgb, var(--text), transparent 20%);
+}
+
+.project-meta {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  align-items: flex-end;
+  align-content: first baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding-top: 2rem;
+  margin-top: auto;
+}
+
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* width: 60dvw; */
+  /* margin: 2rem; */
+}
+
+.project-links > a {
+  /* max-width: 250px; */
+  background-color: var(--button-bg);
+  text-decoration: none;
+  font-family: var(--sub-heading);
+  /* font-size: 1.35rem; */
+  color: var(--text);
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.project-links > a:hover {
+  background-color: var(--hover-bg-color);
+  color: var(--hover-color);
+}
+
 footer {
   margin-top: 4rem;
   padding: 1.5rem;
@@ -315,7 +408,7 @@ footer hr {
 
 /* For sizes tablet and above */
 @media (min-width: 769px) {
-  .about-container .center-content {
+  .container .center-content {
     order: -1;
   }
 }
@@ -332,6 +425,10 @@ footer hr {
 
   .skills-layout {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .project-layout {
+    grid-template-columns: 75%;
   }
 
   .footer-content {
@@ -387,11 +484,15 @@ footer hr {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 85%;
   }
 
   .skills-layout {
     grid-template-columns: 1fr;
+  }
+
+  .project-layout {
+    grid-template-columns: 100%;
   }
 
   .footer-content {
