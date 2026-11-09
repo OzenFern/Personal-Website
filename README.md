@@ -1,5 +1,8 @@
 # Personal Portfolio Website
 
+> [!NOTE]
+> This website is currently undergoing a complete rebuild using Astro, Tailwind CSS and TypeScript. The existing website remains live while development takes place in the `rebuild/astro-typescript` branch.
+
 A professional, fully responsive personal portfolio website built to showcase my projects, technical skills, and ongoing learning in Software Engineering.
 
 **Live Demo**: [_Click Here_](https://ozenfern.github.io/Personal-Website)
